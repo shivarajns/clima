@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: sans-serif;
   font-family: "Poppins", sans-serif;
+  color: black;
 }
 
 body {
@@ -99,4 +100,34 @@ body {
   .search-btn{
     height: 40px;
   }
+}
+
+.card-cnt{
+  width: 280px;
+  height: auto;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 10px;
+  border-radius: 20px;
+}
+
+.card-main-cnt{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: red;
+  justify-content: center;
+}
+
+.card-cnt-mini{
+  width: 280px;
+  max-height: auto;
+  text-align: center;
+  border-radius: 20px;
 }
