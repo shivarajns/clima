@@ -121,13 +121,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  background-color: red;
   justify-content: center;
 }
 
 .card-cnt-mini{
   width: 280px;
-  max-height: auto;
+  height: auto;
   text-align: center;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }

@@ -9,7 +9,7 @@ function App() {
         <>
             <NavBar/>
             <Search setSearch={setSearch} search={search}/>
-            <CardDisplay search={search}/>
+            <CardDisplay search={search} setSearch={setSearch}/>
         </>
     )
 

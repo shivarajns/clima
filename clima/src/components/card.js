@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Sunny from '../Assets/Videos/Sunny.gif'
 import Colud from '../Assets/Videos/Cloudy.gif'
 import Rainy from '../Assets/Videos/Rainy.gif'
-function CardDisplay({ search }) {
+function CardDisplay({ search, setSearch }) {
     const [data, setData] = useState(null);
 
     useEffect(
@@ -19,6 +19,10 @@ function CardDisplay({ search }) {
                     const result = await response.json();
                     setData(result);
                     console.log(result)
+
+
+
+
                 }
                 catch (error) {
                     if (error.name !== 'AbortError') {
@@ -30,13 +34,14 @@ function CardDisplay({ search }) {
             fetchdata();
             return () => controller.abort();
 
-        }, [search]
+        }, [search, setSearch]
     )
 
     let temp_c = data?.current?.temp_c;
     // let temp_c =10;
-    let is_day = data?.current?.is_day;
+    // let is_day = data?.current?.is_day;
     let updated_time = data?.current?.last_updated;
+    let humidity = data?.current?.humidity;
 
     const [tempPic, setTempPic] = useState();
     useEffect(
@@ -44,14 +49,19 @@ function CardDisplay({ search }) {
             if (temp_c >= 20) {
                 setTempPic(Sunny);
             }
-            else if (temp_c >= 15 && temp_c <= 20) {
+            else if (temp_c >= 11 && temp_c <= 20) {
                 setTempPic(Colud)
             }
-            else if (temp_c <= 10) {
+            else {
                 setTempPic(Rainy)
             }
         }, [temp_c]
     )
+
+
+    // 
+
+
 
     return (
         <div className="card-main-cnt">
@@ -66,6 +76,10 @@ function CardDisplay({ search }) {
                     <p>{updated_time}</p>
                 </div>
 
+                <div style={{ width: '280px', height: 'auto', backgroundColor: 'white', borderRadius: '20px', padding: '20px 5px' }}>
+                    <p style={{ fontSize: "1rem", fontWeight: "450" }}>Humidity</p>
+                    <p>{humidity}%</p>
+                </div>
             </div>
         </div>
     )
