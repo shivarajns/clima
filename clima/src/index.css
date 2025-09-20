@@ -35,11 +35,11 @@ body {
 .nav-cnt p {
   font-size: 1.5rem;
   font-weight: bold;
-   margin-left: -20px;
+  margin-left: -20px;
 }
 
 
-.search-cnt{
+.search-cnt {
   width: 100%;
   min-height: 100px;
   display: flex;
@@ -49,7 +49,8 @@ body {
   gap: 15px;
   margin-top: 10px;
 }
-.input{
+
+.input {
   width: 80%;
   height: 40px;
   background-color: white;
@@ -59,17 +60,17 @@ body {
   border: none;
 }
 
-.input:hover{
-  animation: searchanimation 0.3s ease-in-out forwards;
+.input:hover {
+  animation: searchanimation 0.5s ease-in-out forwards;
 }
 
 @keyframes searchanimation {
-  100%{
+  100% {
     transform: scale(1.05);
   }
 }
 
-.search-btn{
+.search-btn {
   width: 120px;
   height: 30px;
   padding: 10px;
@@ -83,26 +84,29 @@ body {
   cursor: pointer;
 }
 
-.search-btn:hover{
+.search-btn:hover {
   animation: searchanimation 0.2s ease-in-out forwards;
 }
 
 @media (min-width:900px) {
-  .nav-cnt{
+  .nav-cnt {
     width: 720px;
   }
-  .search-cnt{
+
+  .search-cnt {
     flex-direction: row;
   }
-  .input{
+
+  .input {
     width: 550px;
   }
-  .search-btn{
+
+  .search-btn {
     height: 40px;
   }
 }
 
-.card-cnt{
+.card-cnt {
   width: 280px;
   height: auto;
   background-color: white;
@@ -114,7 +118,20 @@ body {
   border-radius: 20px;
 }
 
-.card-main-cnt{
+.card-cnt:hover {
+  animation: cardanimation 0.3s ease-in-out forwards;
+}
+
+@keyframes cardanimation {
+  100% {
+    transform: scale(1.04);
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+.card-main-cnt {
   width: 100%;
   height: auto;
   padding: 20px;
@@ -124,7 +141,7 @@ body {
   justify-content: center;
 }
 
-.card-cnt-mini{
+.card-cnt-mini {
   width: 280px;
   height: auto;
   text-align: center;

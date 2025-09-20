@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import Sunny from '../Assets/Videos/Sunny.gif'
 import Colud from '../Assets/Videos/Cloudy.gif'
 import Rainy from '../Assets/Videos/Rainy.gif'
+import Humidity from '../Assets/Images/Humidity.png'
+import Wind from '../Assets/Videos/Wind.gif'
 function CardDisplay({ search, setSearch }) {
     const [data, setData] = useState(null);
 
@@ -19,10 +21,6 @@ function CardDisplay({ search, setSearch }) {
                     const result = await response.json();
                     setData(result);
                     console.log(result)
-
-
-
-
                 }
                 catch (error) {
                     if (error.name !== 'AbortError') {
@@ -40,9 +38,12 @@ function CardDisplay({ search, setSearch }) {
     let temp_c = data?.current?.temp_c;
     // let temp_c =10;
     // let is_day = data?.current?.is_day;
-    let updated_time = data?.current?.last_updated;
+    // let updated_time = data?.current?.last_updated;
     let humidity = data?.current?.humidity;
-
+    let Wind_Speed = data?.current?.wind_kph;
+    // let windchill_c = data?.current?.windchill_c;
+    let condition = data?.current?.condition?.text;
+    let condition_icon = data?.current?.condition?.icon;
     const [tempPic, setTempPic] = useState();
     useEffect(
         () => {
@@ -70,16 +71,20 @@ function CardDisplay({ search, setSearch }) {
                 <img style={{ width: "100px", height: "100px" }} src={tempPic} alt="Error"></img>
                 <p>Temperature: {temp_c}°C.</p>
             </div>
-            <div className="card-cnt-mini">
-                <div style={{ width: '280px', height: 'auto', backgroundColor: 'white', borderRadius: '20px', padding: '20px 5px' }}>
-                    <p style={{ fontSize: "1rem", fontWeight: "450" }}>Last Update</p>
-                    <p>{updated_time}</p>
-                </div>
-
-                <div style={{ width: '280px', height: 'auto', backgroundColor: 'white', borderRadius: '20px', padding: '20px 5px' }}>
-                    <p style={{ fontSize: "1rem", fontWeight: "450" }}>Humidity</p>
-                    <p>{humidity}%</p>
-                </div>
+            <div className="card-cnt">
+                <p style={{ fontSize: "1.5rem", fontWeight: "450" }}>Humidity</p>
+                <img style={{ width: "100px", height: "100px" }} src={Humidity} alt="Error"></img>
+                <p>{humidity}%</p>
+            </div>
+            <div className="card-cnt">
+                <p style={{ fontSize: "1.5rem", fontWeight: "450" }}>Wind</p>
+                <img style={{ width: "100px", height: "100px" }} src={Wind} alt="Error"></img>
+                <p>{Wind_Speed} Km/h</p>
+            </div>
+            <div className="card-cnt">
+                <p style={{ fontSize: "1.5rem", fontWeight: "450" }}>Condition</p>
+                <img style={{ width: "100px", height: "100px"}} src={condition_icon} alt="Error"></img>
+                <p>{condition}</p>
             </div>
         </div>
     )
