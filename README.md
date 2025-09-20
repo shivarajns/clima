@@ -4,7 +4,7 @@ Clima is a simple and responsive weather application built with **React.js**.
 It allows users to search for a city and view real-time weather updates such as **temperature, condition, and visuals (Sunny, Cloudy, Rainy GIFs).**
 
 ---
-
+**Live Demo:**  https://shivarajns.github.io/clima/
 ## 🚀 Features
 - 🌍 Search weather by city name
 - ☀️ Dynamic weather visuals (Sunny, Cloudy, Rainy)
