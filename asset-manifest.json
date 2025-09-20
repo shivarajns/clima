@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/clima/static/css/main.69255889.css",
+    "main.js": "/clima/static/js/main.7819c386.js",
+    "static/media/Logo.gif": "/clima/static/media/Logo.ab798a819b2348a431c2.gif",
+    "static/media/Sunny.gif": "/clima/static/media/Sunny.1d3f21bc7f6f535626d5.gif",
+    "static/media/Cloudy.gif": "/clima/static/media/Cloudy.269145b0484b88873e73.gif",
+    "index.html": "/clima/index.html",
+    "main.69255889.css.map": "/clima/static/css/main.69255889.css.map",
+    "main.7819c386.js.map": "/clima/static/js/main.7819c386.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69255889.css",
+    "static/js/main.7819c386.js"
+  ]
+}
